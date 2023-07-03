@@ -37,7 +37,7 @@ jobs:
                 apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                 accountId: de1b1e4efab211c11794d0d9f6f577c3
                 projectName: image-uploader
-                directory: /.svelte-kit/cloudflare
+                directory: .svelte-kit/cloudflare/_worker.js
                 gitHubToken: ${{ secrets.GITHUB_TOKEN }}
                 branch: main
                 workingDirectory: /
