@@ -22,17 +22,27 @@ jobs:
             - name: Build app
               run: npm run build
 
-    lint:
-        needs: [build]
+    publish:
         runs-on: ubuntu-20.04
+        permissions:
+            contents: read
+            deployments: write
+        name: Publish to Cloudflare Pages
         steps:
-            - uses: actions/
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v3
+            - name: Publish to Cloudflare Pages
+              uses: cloudflare/pages-action@v1
               with:
-                node-version: 16
-            - name: Install dependencies
-              run: npm ci
-            - name: Pass lint
-              run: npm run lint
+                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                accountId: de1b1e4efab211c11794d0d9f6f577c3
+                projectName: image-uploader
+                directory: /.svelte-kit/cloudflare
+                gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+                branch: main
+                workingDirectory: my-site
+                wranglerVersion: '3'
+                
+    
+    
 
     

@@ -22,7 +22,7 @@
             <h1>Upload your image</h1>
             <p>File should be Jpeg, Png,...</p>
             <div on:dragenter|preventDefault={toggleActive} on:dragleave|preventDefault={toggleActive} on:dragover|preventDefault={toggleActive} on:drop={event => example(event)} class="drag-and-drop">
-                <img src="./src/assets/image.svg" alt="bag and drop background image">
+                <img src="image.svg" alt="bag and drop background image">
                 <h3>Drag & Drop your image here</h3>
             </div>
             <p>Or</p>
