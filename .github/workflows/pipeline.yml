@@ -39,7 +39,7 @@ jobs:
                 directory: /.svelte-kit/cloudflare
                 gitHubToken: ${{ secrets.GITHUB_TOKEN }}
                 branch: main
-                workingDirectory: my-site
+                workingDirectory: /
                 wranglerVersion: '3'
                 
     
