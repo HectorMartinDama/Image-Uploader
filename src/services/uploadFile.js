@@ -1,6 +1,8 @@
 import toast from 'svelte-french-toast'; 
 export const SERVER= 'https://image-uploader-backend-k1hs.onrender.com';
 
+
+
 export async function upload(files){
     const formData= new FormData();
     formData.append('image', files[0], files[0].name);

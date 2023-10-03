@@ -1,25 +1,11 @@
-<!-- https://svelte.dev/repl/b17c13d4f1bb40799ccf09e0841ddd90?version=3.59.2 -->
-
 <script>
-    import animationData from '/static/animations/checkedNew.json';
-    import { onMount } from "svelte";
-    import lottie from 'lottie-web';
     import { Toaster } from "svelte-french-toast";
     import { downloadImage, SERVER, copyText } from "../services/uploadFile";
     export let imageName;
     const promise= downloadImage(imageName);
     const path= `${SERVER}/image/${imageName}`
-    console.log(path)
 
     let animationContainer;
-
-    onMount(() =>{
-        lottie.loadAnimation({
-            container: animationContainer,
-            animationData,
-            loop: false
-        });
-    });
 </script> 
 
 
